@@ -1,0 +1,57 @@
+.form-control {
+    background-color: #fff;
+    border: 1px solid #d1d5da;
+    border-radius: 3px;
+    box-shadow: inset 0 1px 2px rgba(27,31,35,.075);
+    color: #24292e;
+    font-size: 16px;
+    outline: none;
+    padding: 6px 8px;
+    vertical-align: middle;
+}
+select.form-control {
+    box-shadow: none !important;    
+}
+.form-control.focus, .form-control:focus, .form-select.focus, .form-select:focus {
+    border-color: #2188ff;
+    box-shadow: inset 0 1px 2px rgba(27,31,35,.075), 0 0 0 0.2em rgba(3,102,214,.3);
+    outline: none;
+}
+.filter-panel > * {
+    padding: 1rem;
+}
+
+.search-repo {
+    /* flex: 1 1 auto!important; */
+}
+.btn {
+    -webkit-appearance: none;
+    -webkit-user-select: none;
+    appearance: none;
+    background-position: -1px -1px;
+    background-repeat: repeat-x;
+    background-size: 110% 110%;
+    border: 1px solid rgba(27,31,35,.2);
+    border-radius: .25em;
+    cursor: pointer;
+    display: inline-block;
+    font-size: 14px;
+    font-weight: 600;
+    line-height: 20px;
+    padding: 6px 12px;
+    position: relative;
+    user-select: none;
+    vertical-align: middle;
+    white-space: nowrap;
+}
+.new-repo span {
+    margin-left: 0.3rem;
+}
+.new-repo > a {
+    background-color: #28a745;
+    background-image: linear-gradient(-180deg,#34d058,#28a745 90%);
+    color: #fff;
+    text-align: center;
+    color: white;
+    text-decoration: none !important;
+}
