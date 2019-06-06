@@ -15,7 +15,7 @@ export default class Profile extends Component {
             <div>
                 <img width="260" height="260" src={this.state.avatar_url} alt="Not supported" />
             </div>
-            <div>
+            <div className='full-name'>
                 <h1 className="vcard-names">
                     <span className="fullname">{this.state.name}</span>
                 </h1>
@@ -25,7 +25,7 @@ export default class Profile extends Component {
                     <span className="username">{this.state.login}</span>
                 </h1>
             </div>
-            <div>
+            <div className='edit-Button'>
                 <button name="button" type="button" className="editButton">
                     Edit profile
                 </button>

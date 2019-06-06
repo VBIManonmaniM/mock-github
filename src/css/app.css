@@ -16,6 +16,18 @@
     .container {
         flex-direction: column !important;
     }
+    .full-name {
+        position: absolute;
+        left: 330px;
+    }
+    .username span {
+        position: absolute;
+        top: 150px;
+        left: 330px;
+    }
+    .edit-Button {
+        padding-top: 1rem !important;
+    }
     .main-container {
         padding-top: 0rem;        
     }
