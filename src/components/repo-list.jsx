@@ -7,13 +7,10 @@ export default class RepoList extends Component {
     };
 
     componentDidMount() {
-        fetch('https://api.github.com/users/supreetsingh247/repos')
+        fetch('https://api.github.com/users/vbimanonmanim/repos')
             .then(res => res.json())
             .then(result => {
                 const repoList = result.map(res => {
-                    if (res.name === 'first-contributions') {
-                        debugger
-                    }
                     return {
                         id: res.id,
                         updated_at: res.updated_at,
