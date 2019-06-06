@@ -1,9 +1,10 @@
 import React, { Component } from 'react';
 import { observable } from "mobx";
-import {Provider, observer } from "mobx-react";
+import { Provider, observer } from "mobx-react";
 import RepoList from "../components/repo-list";
 import Profile from "../components/profile";
 import FilterPanel from "../components/filter-panel";
+import Tab from "../components/tab";
 import '../css/app.css';
 
 class Container extends Component {
@@ -52,7 +53,10 @@ class Container extends Component {
             <div className='padding-4 flex-column-container'>
                 <Provider repoList={this.store}>
                     <>
-                        <div>
+                        <div className='border-bottom'>
+                            <Tab />
+                        </div>
+                        <div className='border-bottom'>
                             <FilterPanel />
                         </div>
                         <div>
