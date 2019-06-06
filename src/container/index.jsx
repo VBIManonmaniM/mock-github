@@ -46,20 +46,20 @@ class Container extends Component {
     }
 
     render() {
-        return <div className='flex-row-container'>
-            <div className='padding-4'>
+        return <div className='container flex-row-container'>
+            <div className='profile-container padding-4'>
                 <Profile />
             </div>
-            <div className='padding-4 flex-column-container'>
+            <div className='padding-4 main-container flex-column-container'>
                 <Provider repoList={this.store}>
                     <>
-                        <div className='border-bottom'>
+                        <div className='tabs-container border-bottom'>
                             <Tab />
                         </div>
-                        <div className='border-bottom'>
+                        <div className='filter-container border-bottom'>
                             <FilterPanel />
                         </div>
-                        <div>
+                        <div className='repo-container'>
                             <RepoList />
                         </div>
                     </>
