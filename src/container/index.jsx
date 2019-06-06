@@ -14,7 +14,7 @@ class Container extends Component {
 
     store = observable.array();
     componentDidMount() {
-        fetch('https://api.github.com/users/vbimanonmanim/repos')
+        fetch('https://api.github.com/users/supreetsingh247/repos')
             .then(res => res.json())
             .then(result => {
                 const repoList = result.map(res => {

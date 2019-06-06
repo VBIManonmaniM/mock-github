@@ -3,7 +3,7 @@ import '../css/profile.css';
 export default class Profile extends Component {
     state = {}
     componentDidMount() {
-        fetch('https://api.github.com/users/vbimanonmanim')
+        fetch('https://api.github.com/users/supreetsingh247')
             .then(res => res.json())
             .then(result => {
                 this.setState({...result});
