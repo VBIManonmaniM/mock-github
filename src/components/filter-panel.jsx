@@ -43,7 +43,7 @@ class FilterPanel extends Component {
     render() {
         return (<div className='filter-panel flex-row-container'>
             <div className="search-repo">
-                <input type="text" className="form-control width-full" placeholder="Find a repository…" onChange={this.onChange} />
+                <input type="text" className="form-control width-full default-font" placeholder="Find a repository…" onChange={this.onChange} />
             </div>
             <div className="repo-type">
                 <select className='form-control' onChange={this.repoTypeChange}>

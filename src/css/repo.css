@@ -59,8 +59,8 @@ a:hover {
 }
 
 .default-font {
-    font-size: 12px;
-    color: #586069;
+    font-size: 12px !important;
+    color: #586069 !important;
 }
 .description > * {
     font-size: 14px !important;
