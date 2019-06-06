@@ -1,11 +1,13 @@
 import React, { Component } from 'react';
+import {observer, inject} from 'mobx-react';
 import '../css/tab.css';
-export default class Tabs extends Component {
+class Tabs extends Component {
     render() {
+        let { repoList = [] } = this.props;
         return <div>
             <nav aria-label="User profile">
                 <a>Overview</a>
-                <a>Repositories (26)</a>
+                <a>Repositories ({repoList.length})</a>
                 <a>Projects</a>
                 <a>Stars</a>
                 <a>Followers</a>
@@ -14,3 +16,5 @@ export default class Tabs extends Component {
         </div>
     }
 };
+
+export default inject('repoList')(observer(Tabs));
