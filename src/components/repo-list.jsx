@@ -1,9 +1,14 @@
 import React, { Component } from 'react';
+import { inject , observer} from "mobx-react";
+
 import Repo from "./repo";
-export default class RepoList extends Component {
+
+class RepoList extends Component {
 
     render() {
-        const { repoList = [] } = this.props;
+        debugger
+        let { repoList = [] } = this.props;
+        repoList = repoList.filter(repo => repo.visible);
         return (<div className='repo-container'>
             {
                 repoList.map(repo => <Repo id={repo.id} {...repo} />)
@@ -11,3 +16,5 @@ export default class RepoList extends Component {
         </div>);
     }
 }
+
+export default inject('repoList')(observer(RepoList));

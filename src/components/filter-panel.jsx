@@ -1,10 +1,25 @@
 import React, { Component } from 'react';
+import { inject , observer} from "mobx-react";
+
 import '../css/filter-panel.css';
-export default class FilterPanel extends Component {
+class FilterPanel extends Component {
+
+
+    onChange = (e) => {
+        let {repoList} = this.props;
+        repoList.forEach((element, index) => {
+            if (element.name.includes(e.target.value)) {
+                element.visible = true;
+            } else {
+                element.visible = false;
+            }
+         });
+    }
+
     render() {
         return (<div className='filter-panel flex-row-container'>
             <div className="search-repo">
-                <input type="text" className="form-control width-full" placeholder="Find a repository…" />
+                <input type="text" className="form-control width-full" placeholder="Find a repository…" onChange={this.onChange}/>
             </div>
             <div className="repo-type">
                 <select className='form-control'>
@@ -37,4 +52,6 @@ export default class FilterPanel extends Component {
         </div>)
     }
 }
+
+export default inject('repoList')(observer(FilterPanel));
 
