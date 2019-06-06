@@ -9,6 +9,10 @@
     padding: 6px 8px;
     vertical-align: middle;
 }
+.width-full{
+    margin-left: -1rem;
+    min-width: 320px!important;
+}
 select.form-control {
     box-shadow: none !important;    
 }
