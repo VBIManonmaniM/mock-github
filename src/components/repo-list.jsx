@@ -8,7 +8,7 @@ class RepoList extends Component {
     render() {
         debugger
         let { repoList = [] } = this.props;
-        repoList = repoList.filter(repo => repo.visible);
+        repoList = repoList.filter(repo => repo.languageFilter && repo.nameFilter && repo.repoTypeFilter);
         return (<div className='repo-container'>
             {
                 repoList.map(repo => <Repo id={repo.id} {...repo} />)

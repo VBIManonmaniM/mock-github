@@ -1,39 +1,63 @@
 import React, { Component } from 'react';
-import { inject , observer} from "mobx-react";
+import { inject, observer } from "mobx-react";
 
 import '../css/filter-panel.css';
 class FilterPanel extends Component {
 
+    repoTypeChange = e => {
+        let { repoList } = this.props;
+        const value = e.target.value;
+        repoList.forEach(element => {
+            if (value === 'all' || element[value]) {
+                element.repoTypeFilter = true;
+            } else {
+                element.repoTypeFilter = false;
+            }
+        });
+    }
+
+    languageChange = (e) => {
+        let { repoList } = this.props;
+        const value = e.target.value;
+        repoList.forEach((element, index) => {
+            if (value === 'all' || element.language.toLowerCase().includes(value)) {
+                element.languageFilter = true;
+            } else {
+                element.languageFilter = false;
+            }
+        });
+    }
 
     onChange = (e) => {
-        let {repoList} = this.props;
-        repoList.forEach((element, index) => {
-            if (element.name.includes(e.target.value)) {
-                element.visible = true;
+        let { repoList } = this.props;
+        const value = e.target.value;
+        repoList.forEach(element => {
+            if (element.name.toLowerCase().includes(value.toLowerCase())) {
+                element.nameFilter = true;
             } else {
-                element.visible = false;
+                element.nameFilter = false;
             }
-         });
+        });
     }
 
     render() {
         return (<div className='filter-panel flex-row-container'>
             <div className="search-repo">
-                <input type="text" className="form-control width-full" placeholder="Find a repository…" onChange={this.onChange}/>
+                <input type="text" className="form-control width-full" placeholder="Find a repository…" onChange={this.onChange} />
             </div>
             <div className="repo-type">
-                <select className='form-control'>
+                <select className='form-control' onChange={this.repoTypeChange}>
                     <option value='all'>All</option>
                     <option value='public'>Public</option>
                     <option value='private'>Private</option>
                     <option value='sources'>Sources</option>
-                    <option value='forks'>Forks</option>
+                    <option value='fork'>Forks</option>
                     <option value='archived'>Archived</option>
-                    <option value='mirrors'>Mirrors</option>
+                    <option value='mirror'>Mirrors</option>
                 </select>
             </div>
             <div className="repo-language">
-                <select className='form-control'>
+                <select className='form-control' onChange={this.languageChange}>
                     <option value='all'>All</option>
                     <option value='javascript'>Javascript</option>
                     <option value='typescript'>Typescript</option>

@@ -25,7 +25,14 @@ class Container extends Component {
                         forks_count: res.forks_count,
                         description: res.description,
                         name: res.name,
-                        visible: true
+                        archived: res.archived,
+                        private: res.private,
+                        public: !res.private,
+                        fork: res.fork,
+                        mirror: res.mirror_url !== null,
+                        languageFilter: true,
+                        nameFilter: true,
+                        repoTypeFilter: true
                     }
                 });
                 this.store.push(...observable(repoList));
