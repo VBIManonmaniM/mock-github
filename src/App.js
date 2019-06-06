@@ -1,11 +1,9 @@
 import React from 'react';
-import RepoList from "./components/repo-list";
-import Profile from "./components/profile";
-import FilterPanel from "./components/filter-panel";
+import MainContainer from "./container/index";
 function App() {
   return (
     <div className="App">
-      <FilterPanel />
+      <MainContainer />
     </div>
   );
 }

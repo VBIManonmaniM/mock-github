@@ -6,6 +6,8 @@ export default class RepoList extends Component {
             <Repo />
             <Repo />
             <Repo />
+            <Repo />
+            <Repo />
         </div>);
     }
 }
