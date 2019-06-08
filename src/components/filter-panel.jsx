@@ -20,7 +20,7 @@ class FilterPanel extends Component {
         let { repoList } = this.props;
         const value = e.target.value;
         repoList.forEach((element, index) => {
-            if (value === 'all' || element.language.toLowerCase().includes(value)) {
+            if (value === 'all' || (element.language && element.language.toLowerCase().includes(value))) {
                 element.languageFilter = true;
             } else {
                 element.languageFilter = false;
